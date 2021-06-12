@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -78,14 +79,14 @@ public class DonorHome {
         ButtonType confirmation = ConfirmationDialog.showDialog();
        if(confirmation==ButtonType.OK)
        {
-           date=new DonationRequest();
+           date =new DonationRequest(user.getID() , user.getBloodType());
            nameDonationText.setText(user.getName());
            bloodTypeDonationText.setText(user.getBloodType());
 
            SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy");
            requestDonationText.setText(formatter.format(date.getRequestDate()));
            appointmentDonationText.setText(formatter.format(date.getAppointmentDate()));
-
+files.insertDonations(date);
          donationCard.setVisible(true);
        }
 
@@ -119,6 +120,17 @@ public class DonorHome {
         assert logoutButton != null : "fx:id=\"logoutButton\" was not injected: check your FXML file 'DonorHome.fxml'.";
         assert sendRequestButton != null : "fx:id=\"sendRequestButton\" was not injected: check your FXML file 'DonorHome.fxml'.";
 
+        DonationRequest request = files.checkDonations(user.getID());
+        if (request != null){
+            sendRequestButton.setDisable(true);
+            donationCard.setVisible(true);
+            nameDonationText.setText(user.getName());
+            bloodTypeDonationText.setText(user.getBloodType());
+
+            SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy");
+            requestDonationText.setText(formatter.format(request.getRequestDate()));
+            appointmentDonationText.setText(formatter.format(request.getAppointmentDate()));
+        }
     }
     DataFiles files = new DataFiles();
     @FXML

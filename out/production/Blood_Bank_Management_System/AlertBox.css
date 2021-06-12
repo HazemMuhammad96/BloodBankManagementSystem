@@ -2,31 +2,36 @@
 .dialog-pane{
     -fx-background-color: #1B1B1B;
     -fx-background-radius: 20;
+    -fx-pref-width: 380px;
+    -fx-pref-height: 200px;
     -fx-background-insets: 0, 1, 2;
     -fx-effect: dropshadow(two-pass-box , rgba(255, 255, 255, 0.4), 1, 0.0 , 0, 1);
 }
 .dialog-pane .header-panel {
     -fx-background-color: #1B1B1B;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Montserrat Semibold";
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 20;
 }
 .dialog-pane .header-panel .label{
     -fx-background-color:#1B1B1B;
-    -fx-font-family: "Premier Sans";
+    -fx-font-family: "Montserrat Semibold";
     -fx-text-fill:white;
-    -fx-font-size:35.0px;
+    -fx-font-size:18.0px;
     -fx-alignment: center;
 }
 .dialog-pane .button{
-    -fx-background-color:#5A1155;
+    -fx-background-color: #E44E4E;
     -fx-text-fill:white;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Montserrat Semibold";
     -fx-font-size:15.0px;
+    -fx-pref-width: 90px;
+    -fx-pref-height: 25px;
+    -fx-background-radius: 8px;
     -fx-wrap-text: true;
     -fx-cursor:hand;
 }
 .dialog-pane .button:hover{
-    -fx-background-color: #8d2887;
+    -fx-background-color: #ff6565;
 }
 /**/

@@ -1,5 +1,7 @@
 package sample;
 
+import Lists.DonationsList;
+import Users.DonationRequest;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
@@ -11,6 +13,7 @@ import java.util.Set;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +43,7 @@ public class BloodDataController {
     private JFXButton myProfileButton;
 
     @FXML
-    private JFXListView<String> bloodList;
+    private JFXListView<DonationRequest> bloodList;
 
     @FXML
     void profileButtonClicked(ActionEvent event) {
@@ -71,10 +74,11 @@ public class BloodDataController {
         assert logoutButton != null : "fx:id=\"logoutButton\" was not injected: check your FXML file 'RecipientHome.fxml'.";
         assert myProfileButton != null : "fx:id=\"myProfileButton\" was not injected: check your FXML file 'RecipientHome.fxml'.";
         assert bloodList != null : "fx:id=\"bloodList\" was not injected: check your FXML file 'RecipientHome.fxml'.";
-
+        ObservableList<DonationRequest> items = FXCollections.observableArrayList(
+                new DonationRequest(1 , "A+"),new DonationRequest(2 , "B+"),
+                new DonationRequest(3 , "AB"),new DonationRequest(4 , "O+")
+        );
+bloodList.setItems(items);
+bloodList.setCellFactory(param -> new DonationsList());
     }
-
-
-
-
 }

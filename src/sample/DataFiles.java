@@ -2,6 +2,7 @@ package sample;
 
 import Factories.DonorFactory;
 import Factories.RecipientFactory;
+import Users.DonationRequest;
 import Users.Donor;
 import Users.Recipient;
 import Users.User;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 public class DataFiles {
 
     Path usersPath = Paths.get("usersInfo.txt");
+    Path donationsPath = Paths.get("donationRequestInfo.txt");
 
     public DataFiles() {
         createFile();
@@ -33,6 +35,13 @@ public class DataFiles {
                 Path donePath = Files.createFile(usersPath);
                 System.out.println("File Created Successfully!");
             }
+            if (Files.exists(donationsPath)) {
+                System.out.println("File already exists");
+            } else {
+                Path donePath = Files.createFile(donationsPath);
+                System.out.println("File Created Successfully!");
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -133,6 +142,36 @@ public class DataFiles {
             e.printStackTrace();
         }
 
+    }
+    public void insertDonations(DonationRequest request)
+    {
+        try {
+            Files.write(donationsPath , (request.toString() + "\n").getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public DonationRequest checkDonations (int ID)
+    {
+        final DonationRequest[] request = new DonationRequest[1];
+        try {
+            Files.lines(donationsPath).forEach(Line -> {
+
+                        String arr[] = Line.split("-");
+
+                        if ( ID == Integer.parseInt(arr[0])) {
+                            request[0] = new DonationRequest(ID,arr[1]);
+                            request[0].setRequestDate(Long.parseLong(arr[2]));
+                            request[0].setAppointmentDate(Long.parseLong(arr[3]));
+                            return;
+                        }
+                    }
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return request[0];
     }
 
 }
