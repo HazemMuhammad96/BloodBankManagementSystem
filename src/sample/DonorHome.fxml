@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DonorHome">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DonorHome">
    <children>
       <ImageView fitHeight="968.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -215,7 +215,7 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT">
                      <children>
-                        <JFXButton fx:id="saveButton" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Save" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="saveButton" onAction="#saveButtonClicked" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Save" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Montserrat SemiBold" size="16.0" />
                            </font>
@@ -223,7 +223,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="deleteButton" prefHeight="38.0" prefWidth="146.0" ripplerFill="#ff6565" style="-fx-border-color: #595959; -fx-border-radius: 40; -fx-border-width: 3;" text="Delete Account" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="deleteButton" onAction="#deleteButtonClicked" prefHeight="38.0" prefWidth="146.0" ripplerFill="#ff6565" style="-fx-border-color: #595959; -fx-border-radius: 40; -fx-border-width: 3;" text="Delete Account" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Montserrat SemiBold" size="13.0" />
                            </font>
@@ -248,7 +248,7 @@
             <Font name="Montserrat SemiBold" size="30.0" />
          </font>
       </Text>
-      <AnchorPane layoutX="131.0" layoutY="594.0" prefHeight="209.0" prefWidth="1014.0">
+      <AnchorPane fx:id="donationCard" layoutX="131.0" layoutY="594.0" prefHeight="209.0" prefWidth="1014.0" visible="false">
          <children>
             <ImageView fitHeight="209.0" fitWidth="936.0" layoutX="66.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -349,7 +349,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="sendRequestButton" layoutX="1050.0" layoutY="530.0" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Send Request" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="sendRequestButton" layoutX="1050.0" layoutY="530.0" onAction="#sendRequestButton" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Send Request" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="16.0" />
          </font>

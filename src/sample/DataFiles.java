@@ -115,8 +115,24 @@ public class DataFiles {
             e.printStackTrace();
         }
 
-
     }
 
+
+    /*
+        Deletion
+     */
+
+    public void deleteUser(User deletedUser){
+        List<User> users = getAllUsers();
+        users.remove(deletedUser);
+        users.sort(User.BY_ID);
+        List<String> usersStrings = users.stream().map(user -> user.toString()).collect(Collectors.toList());
+        try {
+            Files.write(usersPath, usersStrings);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
