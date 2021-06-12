@@ -1,0 +1,71 @@
+.list-view {
+    -fx-background-color:   #141313;
+    -fx-Pref-Width: 914px;
+    -fx-Pref-Height: 600px;
+}
+.list-cell{
+    -fx-background-color:   #434343;
+    -fx-padding: 4;
+}
+
+.list-view .scroll-bar:vertical {
+    -fx-scale-x: 0;
+}
+.list-view .list-cell:hover {
+    -fx-background-color: #434343;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #434343;
+}
+
+.list-view .list-cell {
+    -fx-background-color:  #141313;
+    -fx-text-fill: white;
+}
+
+.list-view .label {
+    -fx-text-fill: white;
+}
+
+.PlayerCard{
+    -fx-background-color:  #2C2C2C;
+}
+.PlayerInformBtn{
+    -fx-pref-width: 44px;
+    -fx-pref-height: 44px;
+    -fx-font-size: 21px;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-style: italic;
+    -fx-margin-right: 10px;
+    -fx-background-color:  #525252;
+    -fx-background-radius: 0;
+    -fx-text-fill: #ffffff;
+}
+.PlayerName{
+    -fx-font-size: 10px;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-fill: #ffffff;
+}
+.PLayerTeam , .PlayerPostion{
+    -fx-font-size: 10px;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-padding: 10px;
+    -fx-fill: #ffffff;
+}
+.PlayerPrice{
+    -fx-font-size: 15px;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-padding: 10 4 6 7;
+    -fx-fill: #ffffff;
+}
+.TShirtPlayer{
+    -fx-padding: 10px;
+}
+
+.Hbox{
+    -fx-pref-width: 44px;
+    -fx-pref-height: 28px;
+    -fx-background-color: #ff0000;
+}
+

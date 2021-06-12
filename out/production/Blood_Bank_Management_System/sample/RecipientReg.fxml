@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RecipientRegisterController">
+   <children>
+      <ImageView fitHeight="968.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/RegisterBg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="123.0" fitWidth="314.0" layoutX="34.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="41.0">
+         <image>
+            <Image url="@../images/RecipientLogo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="350.0" layoutY="164.0" prefHeight="547.0" prefWidth="614.0" style="-fx-background-color: #2A2A2A; -fx-background-radius: 12;" AnchorPane.bottomAnchor="127.20000000000005" AnchorPane.topAnchor="164.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="570.0" prefWidth="615.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Register" textAlignment="CENTER" wrappingWidth="586.9367094039917">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="42.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <GridPane prefHeight="376.0" prefWidth="595.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.733349609375" minWidth="10.0" prefWidth="323.26661376953126" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.59991455078125" minWidth="10.0" prefWidth="271.5333862304687" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="192.00000610351563" minHeight="10.0" prefHeight="109.33334350585938" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="369.8666656494141" minHeight="10.0" prefHeight="104.26665649414062" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="293.86665039062495" minHeight="10.0" prefHeight="103.80001831054688" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="293.86665039062495" minHeight="10.0" prefHeight="86.19998168945312" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox prefHeight="166.0" prefWidth="210.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="74.52531445026398">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="nameText" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="102.0" prefWidth="296.0" GridPane.columnIndex="1">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="emailText" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="306.0" layoutY="10.0" prefHeight="117.0" prefWidth="287.0" GridPane.rowIndex="1">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="passwordText" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="106.0" prefHeight="121.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="ageText" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="296.0" layoutY="106.0" prefHeight="132.0" prefWidth="296.0" GridPane.rowIndex="2">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox fx:id="genderText" focusColor="#405aa800" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" stylesheets="@../ComboBox.css" unFocusColor="#4d4d4d00">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXComboBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="216.0" prefHeight="190.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Type">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox fx:id="bloodTypeText" focusColor="#405aa800" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" stylesheets="@../ComboBox.css" unFocusColor="#4d4d4d00">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXComboBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="117.0" prefWidth="287.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor of the case">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="doctorCaseText" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="117.0" prefWidth="287.0" GridPane.rowIndex="3">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital ">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXTextField fx:id="hospitalName" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <JFXButton fx:id="RegisterButton" onAction="#RegisterButtonClick" prefHeight="38.0" prefWidth="211.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Register" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

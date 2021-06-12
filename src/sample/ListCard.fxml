@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="914.0" style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="67.0" prefWidth="60.0">
+         <children>
+            <ImageView fitHeight="53.0" fitWidth="45.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/BloodDrop.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="15.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+">
+               <font>
+                  <Font name="Montserrat SemiBold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </AnchorPane>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Montserrat SemiBold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+               <font>
+                  <Font name="Montserrat SemiBold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="100.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Received Date">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Montserrat SemiBold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DD/MM/YY">
+               <font>
+                  <Font name="Montserrat SemiBold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="252.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Montserrat SemiBold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DD/MM/YY">
+               <font>
+                  <Font name="Montserrat SemiBold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </VBox>
+      <JFXButton prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Request" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Montserrat SemiBold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <HBox.margin>
+            <Insets left="300.0" />
+         </HBox.margin>
+      </JFXButton>
+   </children>
+</HBox>

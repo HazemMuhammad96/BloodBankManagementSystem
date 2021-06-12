@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+   <children>
+      <ImageView fitHeight="968.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/StartBg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="152.0" fitWidth="592.0" layoutX="61.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="28.0">
+         <image>
+            <Image url="@../images/Logo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="401.0" layoutY="228.0" prefHeight="409.0" prefWidth="544.0" style="-fx-background-color: #2A2A2A; -fx-background-radius: 12;">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="543.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER" wrappingWidth="540.5366821289062">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="42.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <VBox prefHeight="318.0" prefWidth="573.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                           <font>
+                              <Font name="Montserrat Medium" size="24.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="emailTextBox" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="472.0" style="-fx-background-color: #414141; -fx-background-radius: 20; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Montserrat SemiBold" size="30.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </JFXTextField>
+                        <Text fill="WHITE" layoutX="60.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                           <font>
+                              <Font name="Montserrat Medium" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Text>
+                        <JFXTextField fx:id="passwordTextBox" focusColor="#40404000" layoutX="60.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="472.0" style="-fx-background-color: #414141; -fx-background-radius: 20; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Montserrat SemiBold" size="30.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                  </VBox>
+                  <JFXButton fx:id="loginButton" onAction="#loginButtonPressed" prefHeight="46.0" prefWidth="214.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Login" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="475.0" layoutY="784.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? " textAlignment="CENTER">
+         <font>
+            <Font name="Montserrat SemiBold" size="22.0" />
+         </font>
+      </Text>
+      <Hyperlink fx:id="registerButton" layoutX="748.0" layoutY="754.0" onAction="#registerButtonPressed" text="Register" textFill="#e44e4e" underline="true">
+         <font>
+            <Font name="Montserrat SemiBold" size="22.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>
