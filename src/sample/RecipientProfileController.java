@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -113,5 +114,20 @@ public class RecipientProfileController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    DataFiles files = new DataFiles();
+    @FXML
+    void saveButtonClicked(ActionEvent event) {
+        user.setName(nameText.getText());
+        user.setMail(emailText.getText());
+        user.setPassword(passwordText.getText());
+        user.setAge(Integer.parseInt(ageText.getText()));
+        files.updateUser(user);
+    }
+
+    @FXML
+    void deleteButtonClicked(ActionEvent event) {
+        files.deleteUser(user);
+        Platform.exit();
     }
 }

@@ -11,16 +11,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="914.0" style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="CardHbox" alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="914.0" style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="67.0" prefWidth="60.0">
+      <AnchorPane fx:id="AnchorImage" prefHeight="67.0" prefWidth="60.0">
          <children>
             <ImageView fitHeight="53.0" fitWidth="45.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/BloodDrop.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="15.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+">
+            <Text fx:id="BloodType" fill="WHITE" layoutX="15.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+">
                <font>
                   <Font name="Montserrat SemiBold" size="16.0" />
                </font>
@@ -30,9 +30,9 @@
             <Insets left="20.0" />
          </HBox.margin>
       </AnchorPane>
-      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+      <VBox fx:id="QuantityVbox" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
+            <Text fx:id="Quantity" fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -40,7 +40,7 @@
                   <Font name="Montserrat SemiBold" size="12.0" />
                </font>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+            <Text fx:id="QuantityText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
                <font>
                   <Font name="Montserrat SemiBold" size="12.0" />
                </font>
@@ -53,9 +53,9 @@
             <Insets left="20.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="CENTER_LEFT" layoutX="100.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+      <VBox fx:id="ReceivedVbox" alignment="CENTER_LEFT" layoutX="100.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Received Date">
+            <Text fx:id="ReceivedDate" fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Received Date">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -63,7 +63,7 @@
                   <Font name="Montserrat SemiBold" size="12.0" />
                </font>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DD/MM/YY">
+            <Text fx:id="ReceivedDateText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DD/MM/YY">
                <font>
                   <Font name="Montserrat SemiBold" size="12.0" />
                </font>
@@ -76,9 +76,9 @@
             <Insets left="20.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="CENTER_LEFT" layoutX="252.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+      <VBox fx:id="ExpiryVbox" alignment="CENTER_LEFT" layoutX="252.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date">
+            <Text fx:id="ExpiryDate" fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -86,7 +86,7 @@
                   <Font name="Montserrat SemiBold" size="12.0" />
                </font>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DD/MM/YY">
+            <Text fx:id="ExpiryDateText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DD/MM/YY">
                <font>
                   <Font name="Montserrat SemiBold" size="12.0" />
                </font>
@@ -99,7 +99,7 @@
             <Insets left="20.0" />
          </HBox.margin>
       </VBox>
-      <JFXButton prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Request" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="RequestButton" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Request" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="16.0" />
          </font>
