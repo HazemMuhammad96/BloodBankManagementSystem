@@ -60,11 +60,12 @@ public class ListCardController implements Initializable {
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
     public void setItem(Blood blood) {
-//        this.blood = item;
         BloodType.setText(blood.getType());
         QuantityText.setText(blood.getQuantity()+"");
-        ReceivedDate.setText(formatter.format(blood.getReceivedDate()));
-        ExpiryDate.setText(formatter.format(blood.getExpiredDate()));
+        ReceivedDateText.setText(formatter.format(blood.getReceivedDate()));
+        ExpiryDateText.setText(formatter.format(blood.getExpiredDate()));
+
+        System.out.println(blood.getType());
     }
 
 
