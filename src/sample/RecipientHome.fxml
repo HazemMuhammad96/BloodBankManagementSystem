@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -28,7 +29,7 @@
             <Font name="Montserrat SemiBold" size="30.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="searchText" focusColor="#405aa800" layoutX="550.0" layoutY="150.0" prefHeight="30.0" prefWidth="238.0" promptText="Search" style="-fx-background-color: #393939; -fx-background-radius: 40; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="searchText" focusColor="#405aa800" layoutX="681.0" layoutY="136.0" prefHeight="44.0" prefWidth="132.0" promptText="Search" style="-fx-background-color: #393939; -fx-background-radius: 10; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Montserrat SemiBold" size="15.0" />
          </font>
@@ -52,6 +53,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXListView fx:id="bloodList" layoutX="187.0" layoutY="219.0" prefHeight="399.0" prefWidth="848.0" stylesheets="@../ListView.css" />
+      <JFXListView fx:id="bloodList" layoutX="172.0" layoutY="211.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="1000.0" stylesheets="@../ListView.css" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="175.0" />
+      <JFXComboBox fx:id="BloodTypeSearch" focusColor="#405aa800" layoutX="435.0" layoutY="137.0" prefHeight="19.0" prefWidth="215.0" promptText="Blood Type" style="-fx-background-color: #393939;" stylesheets="@../ComboBox.css" unFocusColor="#4d4d4d00" />
    </children>
 </AnchorPane>

@@ -14,11 +14,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
 
 
 public class DataFiles {
@@ -183,15 +184,40 @@ public class DataFiles {
         return request[0];
     }
 
-//    public Queue<Blood> getBloodData() throws IOException {
-//        Files.readAllLines(donationsPath).stream().map(userString -> {
-//            String request[] = userString.split("-");
-//            request[0] = new DonationRequest(arr[0], arr[1]);
-//            request[0].setRequestDate(Long.parseLong(arr[2]));
-//            request[0].setAppointmentDate(Long.parseLong(arr[3]));
-//
-//        });
-//
-//        return new PriorityQueue<Blood>();
-//    }
+    public List<Blood> getBloodData(){
+        List<Blood> bloodList = new ArrayList<Blood>();
+
+        try {
+            List<DonationRequest> donations = Files.readAllLines(donationsPath).stream().map(userString -> {
+                String arr[] = userString.split("-");
+                DonationRequest request = new DonationRequest(Integer.parseInt(arr[0]), arr[1]);
+                request.setRequestDate(Long.parseLong(arr[2]));
+                request.setAppointmentDate(Long.parseLong(arr[3]));
+                return request;
+            }).collect(Collectors.toList());
+
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+            Map<String, List<DonationRequest>> collected = donations.stream()
+                    .collect(groupingBy(DonationRequest::getBloodType));
+
+            collected.forEach((key, value) -> {
+                Map<String, List<DonationRequest>> collect = value.stream().collect(groupingBy(DonationRequest::getFormattedDate));
+                collect.forEach((key2, value2) -> {
+                    try {
+                        bloodList.add(new Blood(key, value2.size(), formatter.parse(key2).getTime()));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                });
+//            System.out.println(collect);
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+//        System.out.println(collected);
+
+        return bloodList;
+    }
 }

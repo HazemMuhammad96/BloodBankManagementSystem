@@ -40,5 +40,8 @@ public class DonationsList extends ListCell<Blood> {
 
             setGraphic(cardFrame);
         }
+        else{
+            setGraphic(null);
+        }
     }
 }

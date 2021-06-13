@@ -12,6 +12,7 @@ import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 
@@ -80,6 +81,48 @@ public class DonorRegisterController {
 
     @FXML
     private JFXDatePicker LastDatePicker;
+
+    ArrayList<String> DiseaseList = new ArrayList<String>();
+
+    public void isTicked(JFXCheckBox name)
+    {
+        if(name.isSelected()){
+            DiseaseList.add(name.getText());
+        } else {
+            System.err.println("sad");
+        }
+
+    }
+
+    @FXML
+    void BloodPressureCheck(ActionEvent event) {
+        isTicked(bloodPressureTick);
+    }
+
+    @FXML
+    void CancerCheck(ActionEvent event) {
+        isTicked(cancerTick);
+    }
+
+    @FXML
+    void DiabetesCheck(ActionEvent event) {
+        isTicked(diabetesTick);
+    }
+
+    @FXML
+    void HeartDisordersCheck(ActionEvent event) {
+        isTicked(heardDisordersTick);
+    }
+
+    @FXML
+    void HepatitsCheck(ActionEvent event) {
+        isTicked(hepatitsTick);
+    }
+
+    @FXML
+    void ThyroidDiseaseCheck(ActionEvent event) {
+        isTicked(thyroidDiseaseTick);
+    }
 
     @FXML
     public void RegisterButtonClick(ActionEvent event) {

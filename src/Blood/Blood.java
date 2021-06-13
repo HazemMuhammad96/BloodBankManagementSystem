@@ -1,16 +1,21 @@
 package Blood;
 
+import java.util.Calendar;
+
 public class Blood {
     String type;
     int quantity;
 
     long receivedDate, expiredDate;
 
-    public Blood(String type, int quantity, long receivedDate, long expiredDate) {
+    public Blood(String type, int quantity, long receivedDate) {
         this.type = type;
         this.quantity = quantity;
         this.receivedDate = receivedDate;
-        this.expiredDate = expiredDate;
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(this.receivedDate);
+        c.add(Calendar.DAY_OF_YEAR, 5);
+        expiredDate = c.getTimeInMillis();
     }
 
 
@@ -44,5 +49,10 @@ public class Blood {
 
     public void setExpiredDate(long expiredDate) {
         this.expiredDate = expiredDate;
+    }
+
+    @Override
+    public String toString() {
+        return getType() + "-" + getQuantity() + "-" + getReceivedDate() + "-" + getExpiredDate();
     }
 }

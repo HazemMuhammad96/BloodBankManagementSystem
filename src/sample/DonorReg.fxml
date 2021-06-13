@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -12,6 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -24,14 +26,14 @@
             <Image url="@../images/RegisterBg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="134.0" fitWidth="255.0" layoutX="61.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="28.0">
+      <ImageView fitHeight="105.0" fitWidth="180.0" layoutX="42.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="26.0">
          <image>
             <Image url="@../images/DonorLogo.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="386.0" layoutY="70.0" prefHeight="752.0" prefWidth="614.0" style="-fx-background-color: #2A2A2A; -fx-background-radius: 12;">
+      <AnchorPane layoutX="238.0" layoutY="89.0" prefHeight="745.0" prefWidth="878.0" style="-fx-background-color: #2A2A2A; -fx-background-radius: 12;">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="615.0">
+            <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="878.0">
                <children>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Register" textAlignment="CENTER" wrappingWidth="586.9367094039917">
                      <font>
@@ -41,15 +43,15 @@
                         <Insets bottom="10.0" top="5.0" />
                      </VBox.margin>
                   </Text>
-                  <GridPane prefHeight="277.0" prefWidth="595.0">
+                  <GridPane prefHeight="193.0" prefWidth="858.0">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.733349609375" minWidth="10.0" prefWidth="323.26661376953126" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.733349609375" minWidth="10.0" prefWidth="291.13336181640625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="298.86663818359375" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.59991455078125" minWidth="10.0" prefWidth="271.5333862304687" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints maxHeight="192.00000610351563" minHeight="10.0" prefHeight="109.33334350585938" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="369.8666656494141" minHeight="10.0" prefHeight="104.26665649414062" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="293.86665039062495" minHeight="10.0" prefHeight="107.60004272460941" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="192.00000610351563" minHeight="10.0" prefHeight="86.8000244140625" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="369.8666656494141" minHeight="10.0" prefHeight="92.39997558593751" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
                         <VBox prefHeight="166.0" prefWidth="210.0">
@@ -104,7 +106,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </VBox>
-                        <VBox layoutX="306.0" layoutY="10.0" prefHeight="117.0" prefWidth="287.0" GridPane.rowIndex="1">
+                        <VBox layoutX="306.0" layoutY="10.0" prefHeight="117.0" prefWidth="287.0" GridPane.columnIndex="2">
                            <children>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                                  <font>
@@ -130,7 +132,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </VBox>
-                        <VBox layoutX="10.0" layoutY="106.0" prefHeight="121.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <VBox layoutX="10.0" layoutY="106.0" prefHeight="121.0" prefWidth="286.0" GridPane.rowIndex="1">
                            <children>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
                                  <font>
@@ -156,7 +158,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </VBox>
-                        <VBox layoutX="296.0" layoutY="106.0" prefHeight="132.0" prefWidth="296.0" GridPane.rowIndex="2">
+                        <VBox layoutX="296.0" layoutY="106.0" prefHeight="132.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
                                  <font>
@@ -176,7 +178,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </VBox>
-                        <VBox layoutX="10.0" layoutY="216.0" prefHeight="190.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <VBox layoutX="10.0" layoutY="216.0" prefHeight="190.0" prefWidth="273.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Type">
                                  <font>
@@ -203,14 +205,14 @@
                   </GridPane>
                   <GridPane layoutX="20.0" layoutY="102.0" prefHeight="198.0" prefWidth="615.0">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="405.1332763671875" minWidth="10.0" prefWidth="405.1332763671875" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.800048828125" minWidth="10.0" prefWidth="208.86672363281252" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="405.1332763671875" minWidth="10.0" prefWidth="327.73330078125" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.7333618164063" minWidth="10.0" prefWidth="276.20000000000005" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.800048828125" minWidth="10.0" prefWidth="266.6" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints maxHeight="192.00000610351563" minHeight="10.0" prefHeight="35.39996337890625" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="369.8666656494141" minHeight="10.0" prefHeight="49.466650390625006" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="293.86665039062495" minHeight="10.0" prefHeight="54.66669464111328" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="293.86665039062495" minHeight="10.0" prefHeight="47.733305358886724" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Any possible disease:" wrappingWidth="205.7252732515335">
@@ -221,7 +223,7 @@
                               <Insets left="20.0" />
                            </GridPane.margin>
                         </Text>
-                        <JFXCheckBox fx:id="bloodPressureTick" checkedColor="#e44e4e" prefHeight="46.0" prefWidth="254.0" text="blood pressure disorders" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.rowIndex="1">
+                        <JFXCheckBox fx:id="bloodPressureTick" checkedColor="#e44e4e" onAction="#BloodPressureCheck" prefHeight="46.0" prefWidth="254.0" text="blood pressure disorders" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.rowIndex="1">
                            <font>
                               <Font name="Montserrat SemiBold" size="17.0" />
                            </font>
@@ -229,12 +231,20 @@
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </JFXCheckBox>
-                        <JFXCheckBox fx:id="thyroidDiseaseTick" checkedColor="#e44e4e" layoutX="35.0" layoutY="52.0" prefHeight="46.0" prefWidth="254.0" text="thyroid disease" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <JFXCheckBox fx:id="thyroidDiseaseTick" checkedColor="#e44e4e" layoutX="35.0" layoutY="52.0" onAction="#ThyroidDiseaseCheck" prefHeight="46.0" prefWidth="254.0" text="thyroid disease" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font name="Montserrat SemiBold" size="17.0" />
                            </font>
                         </JFXCheckBox>
-                        <JFXCheckBox fx:id="heardDisordersTick" checkedColor="#e44e4e" layoutX="325.0" layoutY="46.0" prefHeight="46.0" prefWidth="254.0" text="heart disorders" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.rowIndex="2">
+                        <JFXCheckBox fx:id="heardDisordersTick" checkedColor="#e44e4e" layoutX="325.0" layoutY="46.0" onDragDetected="#HeartDisordersCheck" prefHeight="46.0" prefWidth="254.0" text="heart disorders" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Montserrat SemiBold" size="17.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="hepatitsTick" checkedColor="#e44e4e" layoutX="10.0" layoutY="10.0" onAction="#HepatitsCheck" prefHeight="46.0" prefWidth="254.0" text="hepatitis" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.rowIndex="2">
                            <font>
                               <Font name="Montserrat SemiBold" size="17.0" />
                            </font>
@@ -242,20 +252,15 @@
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </JFXCheckBox>
-                        <JFXCheckBox fx:id="hepatitsTick" checkedColor="#e44e4e" layoutX="10.0" layoutY="10.0" prefHeight="46.0" prefWidth="254.0" text="hepatitis" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <font>
-                              <Font name="Montserrat SemiBold" size="17.0" />
-                           </font>
-                        </JFXCheckBox>
-                        <JFXCheckBox fx:id="diabetesTick" checkedColor="#e44e4e" layoutX="35.0" layoutY="89.0" prefHeight="46.0" prefWidth="254.0" text="diabetes" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.rowIndex="3">
+                        <JFXCheckBox fx:id="diabetesTick" checkedColor="#e44e4e" layoutX="35.0" layoutY="89.0" onAction="#DiabetesCheck" prefHeight="46.0" prefWidth="254.0" text="diabetes" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="Montserrat SemiBold" size="17.0" />
                            </font>
                            <GridPane.margin>
-                              <Insets left="25.0" />
+                              <Insets />
                            </GridPane.margin>
                         </JFXCheckBox>
-                        <JFXCheckBox fx:id="cancerTick" checkedColor="#e44e4e" layoutX="35.0" layoutY="129.0" prefHeight="46.0" prefWidth="254.0" text="cancer" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <JFXCheckBox fx:id="cancerTick" checkedColor="#e44e4e" layoutX="35.0" layoutY="129.0" onAction="#CancerCheck" prefHeight="46.0" prefWidth="254.0" text="cancer" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <font>
                               <Font name="Montserrat SemiBold" size="17.0" />
                            </font>
@@ -265,36 +270,56 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </GridPane>
-                  <JFXCheckBox fx:id="anySufferTick" checkedColor="#e44e4e" prefHeight="46.0" prefWidth="564.0" text="If you suffer from any other disease or take any medicine" textAlignment="CENTER" textFill="WHITE" unCheckedColor="#414141">
-                     <font>
-                        <Font name="Montserrat SemiBold" size="17.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </JFXCheckBox>
-                  <VBox prefHeight="83.0" prefWidth="469.0">
+                  <HBox>
                      <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of the latest donation" wrappingWidth="262.2586976289749">
-                           <font>
-                              <Font name="Montserrat SemiBold" size="18.0" />
-                           </font>
-                        </Text>
-                        <JFXDatePicker fx:id="LastDatePicker" defaultColor="#ff6565" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-padding: 8;" />
+                        <VBox prefHeight="162.0" prefWidth="617.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="If you suffer from any other disease or take any medicine:">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <JFXTextArea focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="562.0" promptText="Type Here.." style="-fx-background-color: #414141; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
+                                 <VBox.margin>
+                                    <Insets left="30.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </JFXTextArea>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="162.0" prefWidth="192.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of the latest donation" wrappingWidth="206.79190075397491">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXDatePicker fx:id="LastDatePicker" defaultColor="#ff6565" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-padding: 8; -fx-text-inner-color: #ffffff;">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </JFXDatePicker>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </VBox>
                      </children>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets left="10.0" top="10.0" />
-                     </VBox.margin>
-                  </VBox>
+                  </HBox>
                   <JFXButton fx:id="RegisterButton" onAction="#RegisterButtonClick" prefHeight="38.0" prefWidth="211.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Register" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Montserrat SemiBold" size="23.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="10.0" />
+                        <Insets top="20.0" />
                      </VBox.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />

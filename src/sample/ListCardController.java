@@ -65,7 +65,6 @@ public class ListCardController implements Initializable {
         ReceivedDateText.setText(formatter.format(blood.getReceivedDate()));
         ExpiryDateText.setText(formatter.format(blood.getExpiredDate()));
 
-        System.out.println(blood.getType());
     }
 
 
