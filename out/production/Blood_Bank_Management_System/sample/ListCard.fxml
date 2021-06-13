@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="CardHbox" alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="914.0" style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="CardFrame" alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="914.0" style="-fx-background-color: #343434; -fx-background-radius: 10;" styleClass="hbox" stylesheets="@../ListView.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ListCardController">
    <children>
-      <AnchorPane fx:id="AnchorImage" prefHeight="67.0" prefWidth="60.0">
+      <AnchorPane prefHeight="67.0" prefWidth="60.0">
          <children>
             <ImageView fitHeight="53.0" fitWidth="45.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -30,9 +30,9 @@
             <Insets left="20.0" />
          </HBox.margin>
       </AnchorPane>
-      <VBox fx:id="QuantityVbox" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Text fx:id="Quantity" fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
+            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -53,9 +53,9 @@
             <Insets left="20.0" />
          </HBox.margin>
       </VBox>
-      <VBox fx:id="ReceivedVbox" alignment="CENTER_LEFT" layoutX="100.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+      <VBox alignment="CENTER_LEFT" layoutX="100.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Text fx:id="ReceivedDate" fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Received Date">
+            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Received Date">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -78,7 +78,7 @@
       </VBox>
       <VBox fx:id="ExpiryVbox" alignment="CENTER_LEFT" layoutX="252.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Text fx:id="ExpiryDate" fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date">
+            <Text fill="#7d7d7d" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>

@@ -1,7 +1,9 @@
 package sample;
 
+import Blood.Blood;
 import Lists.DonationsList;
 import Users.DonationRequest;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
@@ -43,11 +45,11 @@ public class BloodDataController {
     private JFXButton myProfileButton;
 
     @FXML
-    private JFXListView<DonationRequest> bloodList;
+    private JFXListView<Blood> bloodList;
 
     @FXML
     void profileButtonClicked(ActionEvent event) {
-    ChangeScene(event,"RecipientProfile.fxml");
+        ChangeScene(event, "RecipientProfile.fxml");
     }
 
     private void ChangeScene(ActionEvent event, String path) {
@@ -75,11 +77,16 @@ public class BloodDataController {
         assert myProfileButton != null : "fx:id=\"myProfileButton\" was not injected: check your FXML file 'RecipientHome.fxml'.";
         assert bloodList != null : "fx:id=\"bloodList\" was not injected: check your FXML file 'RecipientHome.fxml'.";
 
-        ObservableList<DonationRequest> items = FXCollections.observableArrayList(
-                new DonationRequest(1 , "A+"),new DonationRequest(2 , "B+"),
-                new DonationRequest(3 , "AB"),new DonationRequest(4 , "O+")
-        );
-bloodList.setItems(items);
-bloodList.setCellFactory(param -> new DonationsList());
+        ObservableList<Blood> items = FXCollections.observableArrayList(
+                new Blood("A+", 2, System.currentTimeMillis(),System.currentTimeMillis()),
+                new Blood("B+", 1, System.currentTimeMillis(),System.currentTimeMillis()),
+                new Blood("O+", 3, System.currentTimeMillis(),System.currentTimeMillis()),
+                new Blood("AB+", 4, System.currentTimeMillis(),System.currentTimeMillis()),
+                new Blood("A+", 7, System.currentTimeMillis(),System.currentTimeMillis()),
+                new Blood("B+", 8, System.currentTimeMillis(),System.currentTimeMillis()),
+                new Blood("O+", 1, System.currentTimeMillis(),System.currentTimeMillis()),
+                new Blood("AB+", 2, System.currentTimeMillis(),System.currentTimeMillis()));
+        bloodList.setItems(items);
+        bloodList.setCellFactory(param -> new DonationsList());
     }
 }
