@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class Donor extends User {
     ArrayList<Disease> donorDisease = null;
-    String dateOfLastDonation;
+    long dateOfLastDonation;
 
     public Donor() {}
 
-    public Donor(int ID, String name, String mail, String password, int age, String gender, String bloodType, String date) {
+    public Donor(int ID, String name, String mail, String password, int age, String gender, String bloodType, long date) {
         super(ID, name, mail, password, age, gender, bloodType);
         //this.donorDisease = donorDisease;
         dateOfLastDonation = date;
@@ -34,11 +34,11 @@ public class Donor extends User {
         this.donorDisease = donorDisease;
     }
 
-    public String getDateOfLastDonation() {
+    public long getDateOfLastDonation() {
         return dateOfLastDonation;
     }
 
-    public void setDateOfLastDonation(String dateOfLastDonation) {
+    public void setDateOfLastDonation(long dateOfLastDonation) {
         this.dateOfLastDonation = dateOfLastDonation;
     }
 }

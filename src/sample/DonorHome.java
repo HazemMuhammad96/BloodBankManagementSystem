@@ -1,14 +1,17 @@
 package sample;
+
 import Users.Donor;
 import Users.LoginRegisterUtils;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,23 +75,28 @@ public class DonorHome {
     @FXML
     private AnchorPane donationCard;
 
-    Donor user ;
+
+    Donor user;
     DonationRequest date;
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+
     @FXML
     void sendRequestButton(ActionEvent event) {
         ButtonType confirmation = ConfirmationDialog.showDialog();
-       if(confirmation==ButtonType.OK)
-       {
-           date =new DonationRequest(user.getID() , user.getBloodType());
-           nameDonationText.setText(user.getName());
-           bloodTypeDonationText.setText(user.getBloodType());
+        if (confirmation == ButtonType.OK) {
+            date = new DonationRequest(user.getID(), user.getBloodType());
+            nameDonationText.setText(user.getName());
+            bloodTypeDonationText.setText(user.getBloodType());
 
-           SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy");
-           requestDonationText.setText(formatter.format(date.getRequestDate()));
-           appointmentDonationText.setText(formatter.format(date.getAppointmentDate()));
-files.insertDonations(date);
-         donationCard.setVisible(true);
-       }
+            requestDonationText.setText(formatter.format(date.getRequestDate()));
+            appointmentDonationText.setText(formatter.format(date.getAppointmentDate()));
+            user.setDateOfLastDonation(date.getRequestDate());
+            dateText.setText(formatter.format(date.getRequestDate()));
+            files.insertDonation(date);
+            donationCard.setVisible(true);
+            sendRequestButton.setDisable(true);
+        }
 
     }
 
@@ -102,7 +110,7 @@ files.insertDonations(date);
         ageText.setText(user.getAge() + "");
         genderText.setText(user.getGender());
         bloodText.setText(user.getBloodType());
-        dateText.setText(user.getDateOfLastDonation());
+        dateText.setText(formatter.format(user.getDateOfLastDonation()));
 
         assert nameText != null : "fx:id=\"nameText\" was not injected: check your FXML file 'DonorHome.fxml'.";
         assert emailText != null : "fx:id=\"emailText\" was not injected: check your FXML file 'DonorHome.fxml'.";
@@ -120,26 +128,33 @@ files.insertDonations(date);
         assert logoutButton != null : "fx:id=\"logoutButton\" was not injected: check your FXML file 'DonorHome.fxml'.";
         assert sendRequestButton != null : "fx:id=\"sendRequestButton\" was not injected: check your FXML file 'DonorHome.fxml'.";
 
-        DonationRequest request = files.checkDonations(user.getID());
-        if (request != null){
+        DonationRequest request = files.getDonation(user.getID());
+        if (request != null) {
             sendRequestButton.setDisable(true);
             donationCard.setVisible(true);
             nameDonationText.setText(user.getName());
             bloodTypeDonationText.setText(user.getBloodType());
 
-            SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             requestDonationText.setText(formatter.format(request.getRequestDate()));
             appointmentDonationText.setText(formatter.format(request.getAppointmentDate()));
         }
     }
+
     DataFiles files = new DataFiles();
+
     @FXML
     void saveButtonClicked(ActionEvent event) {
         user.setName(nameText.getText());
         user.setMail(emailText.getText());
         user.setPassword(passwordText.getText());
         user.setAge(Integer.parseInt(ageText.getText()));
-
+        try {
+            Date lastDonationDate = formatter.parse(dateText.getText());
+            user.setDateOfLastDonation(lastDonationDate.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         files.updateUser(user);
     }
 

@@ -74,6 +74,7 @@ public class BloodDataController {
         assert logoutButton != null : "fx:id=\"logoutButton\" was not injected: check your FXML file 'RecipientHome.fxml'.";
         assert myProfileButton != null : "fx:id=\"myProfileButton\" was not injected: check your FXML file 'RecipientHome.fxml'.";
         assert bloodList != null : "fx:id=\"bloodList\" was not injected: check your FXML file 'RecipientHome.fxml'.";
+
         ObservableList<DonationRequest> items = FXCollections.observableArrayList(
                 new DonationRequest(1 , "A+"),new DonationRequest(2 , "B+"),
                 new DonationRequest(3 , "AB"),new DonationRequest(4 , "O+")

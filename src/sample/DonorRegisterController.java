@@ -3,13 +3,16 @@ package sample;
 import Users.Donor;
 import Users.LoginRegisterUtils;
 import Users.Recipient;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -74,11 +77,14 @@ public class DonorRegisterController {
     @FXML
     private JFXButton RegisterButton;
 
+
+    @FXML
+    private JFXDatePicker LastDatePicker;
+
     @FXML
     public void RegisterButtonClick(ActionEvent event) {
         LoginRegisterUtils Utils = new LoginRegisterUtils();
         DataFiles Files = new DataFiles();
-
         String name = nameText.getText();
         String email = emailText.getText();
         String password = passwordText.getText();
@@ -86,16 +92,19 @@ public class DonorRegisterController {
         String gender = genderText.getValue().toString();
         String blood = bloodTypeText.getValue().toString();
         String lDate = LastDate.getText();
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, LastDatePicker.getValue().getDayOfMonth());
+        cal.set(Calendar.MONTH, LastDatePicker.getValue().getMonthValue() - 1);
+        cal.set(Calendar.YEAR, LastDatePicker.getValue().getYear());
+        long date = cal.getTimeInMillis();
+
         //ArrayList of possible disease missing !!
 
-        if (Utils.validateUserRegistration(email , password))
-        {
-            Donor don = new Donor(1 , name , email, password , age , gender , blood , lDate);
+        if (Utils.validateUserRegistration(email, password)) {
+            Donor don = new Donor(1, name, email, password, age, gender, blood, date);
 
             Files.insertUser(don);
-        }
-        else
-        {
+        } else {
             System.err.println("Somk");
         }
 
@@ -119,7 +128,7 @@ public class DonorRegisterController {
         assert anySufferTick != null : "fx:id=\"anySufferTick\" was not injected: check your FXML file 'DonorReg.fxml'.";
         assert LastDate != null : "fx:id=\"LastDate\" was not injected: check your FXML file 'DonorReg.fxml'.";
         assert RegisterButton != null : "fx:id=\"RegisterButton\" was not injected: check your FXML file 'DonorReg.fxml'.";
-        genderText.setItems(FXCollections.observableArrayList("M","F"));
-        bloodTypeText.setItems((FXCollections.observableArrayList("A+","A-","B+","B-","AB+","AB-","O-","O+")));
+        genderText.setItems(FXCollections.observableArrayList("M", "F"));
+        bloodTypeText.setItems((FXCollections.observableArrayList("A+", "A-", "B+", "B-", "AB+", "AB-", "O-", "O+")));
     }
 }

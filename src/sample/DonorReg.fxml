@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DonorRegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DonorRegisterController">
    <children>
       <ImageView fitHeight="968.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -279,20 +280,7 @@
                               <Font name="Montserrat SemiBold" size="18.0" />
                            </font>
                         </Text>
-                        <JFXTextField fx:id="LastDate" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="220.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
-                           <font>
-                              <Font name="Montserrat SemiBold" size="30.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </JFXTextField>
+                        <JFXDatePicker fx:id="LastDatePicker" defaultColor="#ff6565" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-padding: 8;" />
                      </children>
                      <padding>
                         <Insets left="10.0" />
@@ -319,5 +307,16 @@
             </VBox>
          </children>
       </AnchorPane>
+      <JFXTextField fx:id="LastDate" focusColor="#40404000" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="220.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000" visible="false">
+         <font>
+            <Font name="Montserrat SemiBold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
    </children>
 </AnchorPane>

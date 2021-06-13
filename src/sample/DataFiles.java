@@ -1,5 +1,6 @@
 package sample;
 
+import Blood.Blood;
 import Factories.DonorFactory;
 import Factories.RecipientFactory;
 import Users.DonationRequest;
@@ -15,6 +16,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.stream.Collectors;
 
 
@@ -48,12 +51,16 @@ public class DataFiles {
 
     }
 
+    //Users
+
     /*
         Insertions
      */
     public void insertUser(User user) {
 
         try {
+            int id = Files.lines(usersPath).collect(Collectors.toList()).size() + 1;
+            user.setID(id);
             Files.write(usersPath, (user.toString() + "\n").getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
@@ -131,7 +138,7 @@ public class DataFiles {
         Deletion
      */
 
-    public void deleteUser(User deletedUser){
+    public void deleteUser(User deletedUser) {
         List<User> users = getAllUsers();
         users.remove(deletedUser);
         users.sort(User.BY_ID);
@@ -143,25 +150,27 @@ public class DataFiles {
         }
 
     }
-    public void insertDonations(DonationRequest request)
-    {
+
+    // Donations
+
+    public void insertDonation(DonationRequest request) {
         try {
-            Files.write(donationsPath , (request.toString() + "\n").getBytes(), StandardOpenOption.APPEND);
+            Files.write(donationsPath, (request.toString() + "\n").getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-    public DonationRequest checkDonations (int ID)
-    {
+
+    public DonationRequest getDonation(int ID) {
         final DonationRequest[] request = new DonationRequest[1];
         try {
             Files.lines(donationsPath).forEach(Line -> {
 
                         String arr[] = Line.split("-");
 
-                        if ( ID == Integer.parseInt(arr[0])) {
-                            request[0] = new DonationRequest(ID,arr[1]);
+                        if (ID == Integer.parseInt(arr[0])) {
+                            request[0] = new DonationRequest(ID, arr[1]);
                             request[0].setRequestDate(Long.parseLong(arr[2]));
                             request[0].setAppointmentDate(Long.parseLong(arr[3]));
                             return;
@@ -174,4 +183,15 @@ public class DataFiles {
         return request[0];
     }
 
+//    public Queue<Blood> getBloodData() throws IOException {
+//        Files.readAllLines(donationsPath).stream().map(userString -> {
+//            String request[] = userString.split("-");
+//            request[0] = new DonationRequest(arr[0], arr[1]);
+//            request[0].setRequestDate(Long.parseLong(arr[2]));
+//            request[0].setAppointmentDate(Long.parseLong(arr[3]));
+//
+//        });
+//
+//        return new PriorityQueue<Blood>();
+//    }
 }
