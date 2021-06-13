@@ -76,9 +76,8 @@ public class DonorRegisterController {
 
     ArrayList<String> DiseaseList = new ArrayList<String>();
 
-    public void isTicked(JFXCheckBox name)
-    {
-        if(name.isSelected()){
+    public void isTicked(JFXCheckBox name) {
+        if (name.isSelected()) {
             DiseaseList.add(name.getText());
         } else {
             System.err.println("sad");
@@ -137,14 +136,34 @@ public class DonorRegisterController {
 
         if (Utils.validateUserRegistration(email, password)) {
             Donor don = new Donor(1, name, email, password, age, gender, blood, date);
-
+            don.setDonorDisease(DiseaseList);
             Files.insertUser(don);
+            LoginRegisterUtils utils = new LoginRegisterUtils();
+            utils.validateUserLogin(email, password);
+
+            ChangeScene(event, "DonorHome.fxml");
+
         } else {
             System.err.println("Somk");
         }
 
     }
 
+    private void ChangeScene(ActionEvent event, String path) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(path));
+            Parent rootRegister = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stage.setTitle("Blood Bank Management System");
+            stage.setScene(new Scene(rootRegister));
+
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void initialize() {

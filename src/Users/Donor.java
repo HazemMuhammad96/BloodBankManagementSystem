@@ -3,34 +3,41 @@ package Users;
 import Blood.Disease;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Donor extends User {
-    ArrayList<Disease> donorDisease = null;
+    List<String> donorDisease = null;
     long dateOfLastDonation;
 
     public Donor() {}
 
-    public Donor(int ID, String name, String mail, String password, int age, String gender, String bloodType, long date) {
+    public Donor(int ID, String name, String mail, String password, int age, String gender, String bloodType,
+                 long date) {
         super(ID, name, mail, password, age, gender, bloodType);
-        //this.donorDisease = donorDisease;
         dateOfLastDonation = date;
     }
 
     public void addDisease(String name) {
-        donorDisease.add(new Disease(name));
+        donorDisease.add(name);
     }
 
     @Override
     public String toString() {
-        return "D-" + super.toString() + "-" + dateOfLastDonation;
+        String s = "D%" + super.toString() + "%" + dateOfLastDonation + "%";
+        for (int i = 0; i < donorDisease.size(); i++) {
+            s += donorDisease.get(i);
+            if (i != donorDisease.size() - 1) s += "^";
+        }
+        return s;
     }
 
 
-    public ArrayList<Disease> getDonorDisease() {
+
+    public List<String> getDonorDisease() {
         return donorDisease;
     }
 
-    public void setDonorDisease(ArrayList<Disease> donorDisease) {
+    public void setDonorDisease(List<String> donorDisease) {
         this.donorDisease = donorDisease;
     }
 

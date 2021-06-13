@@ -61,7 +61,7 @@ public class DonationRequest {
 
     @Override
     public String toString() {
-        String s = ID + "-" + bloodType + "-" + requestDate + "-" + appointmentDate;
+        String s = ID + "%" + bloodType + "%" + requestDate + "%" + appointmentDate;
         return s;
     }
 }

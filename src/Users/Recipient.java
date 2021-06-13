@@ -14,7 +14,7 @@ public class Recipient extends User {
 
     @Override
     public String toString() {
-        return "R-" + super.toString() + "-" + hospital + "-" + doctorOfCase;
+        return "R%" + super.toString() + "%" + hospital + "%" + doctorOfCase;
     }
 
 

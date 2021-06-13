@@ -112,6 +112,7 @@ public class DonorHome {
         bloodText.setText(user.getBloodType());
         dateText.setText(formatter.format(user.getDateOfLastDonation()));
 
+        System.out.println(user.getDonorDisease());
         assert nameText != null : "fx:id=\"nameText\" was not injected: check your FXML file 'DonorHome.fxml'.";
         assert emailText != null : "fx:id=\"emailText\" was not injected: check your FXML file 'DonorHome.fxml'.";
         assert passwordText != null : "fx:id=\"passwordText\" was not injected: check your FXML file 'DonorHome.fxml'.";

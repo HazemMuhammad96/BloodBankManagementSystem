@@ -27,7 +27,7 @@ public abstract class User {
 
     @Override
     public String toString() {
-        String s = ID + "-" + name + "-" + mail + "-" + password + "-" + age + "-" + gender + "-" + bloodType;
+        String s = ID + "%" + name + "%" + mail + "%" + password + "%" + age + "%" + gender + "%" + bloodType;
         return s;
     }
 

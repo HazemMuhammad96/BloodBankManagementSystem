@@ -2,15 +2,23 @@ package sample;
 
 import Users.LoginRegisterUtils;
 import Users.Recipient;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class RecipientRegisterController {
 
@@ -61,18 +69,36 @@ public class RecipientRegisterController {
         String gender = genderText.getValue().toString();
         String blood = bloodTypeText.getValue().toString();
 
-        if (Utils.validateUserRegistration(email , password))
-        {
-            Recipient rec = new Recipient( 1 , name , email, password , age , gender , blood , hospital , doctorCase );
+        if (Utils.validateUserRegistration(email, password)) {
+            Recipient rec = new Recipient(1, name, email, password, age, gender, blood, hospital, doctorCase);
 
             Files.insertUser(rec);
-        }
-        else
-        {
+            LoginRegisterUtils utils = new LoginRegisterUtils();
+            utils.validateUserLogin(email, password);
+
+            ChangeScene(event, "RecipientHome.fxml");
+        } else {
             System.err.println("Somk");
         }
 
     }
+
+    private void ChangeScene(ActionEvent event, String path) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(path));
+            Parent rootRegister = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stage.setTitle("Blood Bank Management System");
+            stage.setScene(new Scene(rootRegister));
+
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     void initialize() {
@@ -85,8 +111,8 @@ public class RecipientRegisterController {
         assert doctorCaseText != null : "fx:id=\"doctorCaseText\" was not injected: check your FXML file 'RecipientReg.fxml'.";
         assert hospitalName != null : "fx:id=\"hospitalName\" was not injected: check your FXML file 'RecipientReg.fxml'.";
         assert RegisterButton != null : "fx:id=\"RegisterButton\" was not injected: check your FXML file 'RecipientReg.fxml'.";
-        genderText.setItems(FXCollections.observableArrayList("M","F"));
-        bloodTypeText.setItems((FXCollections.observableArrayList("A+","A-","B+","B-","AB+","AB-","O-","O+")));
+        genderText.setItems(FXCollections.observableArrayList("M", "F"));
+        bloodTypeText.setItems((FXCollections.observableArrayList("A+", "A-", "B+", "B-", "AB+", "AB-", "O-", "O+")));
     }
 
 }

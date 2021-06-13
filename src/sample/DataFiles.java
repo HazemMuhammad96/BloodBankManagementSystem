@@ -79,7 +79,7 @@ public class DataFiles {
             e.printStackTrace();
         }
         List<User> users = s.stream().map(userString -> {
-            String arr[] = userString.split("-");
+            String arr[] = userString.split("%");
             return checkUser(arr);
         }).collect(Collectors.toList());
 
@@ -99,7 +99,7 @@ public class DataFiles {
 
         try {
             Files.lines(usersPath).forEach(Line -> {
-                        String arr[] = Line.split("-");
+                        String arr[] = Line.split("%");
 
                         if (arr[3].equalsIgnoreCase(email)) {
                             user[0] = checkUser(arr);
@@ -168,7 +168,7 @@ public class DataFiles {
         try {
             Files.lines(donationsPath).forEach(Line -> {
 
-                        String arr[] = Line.split("-");
+                        String arr[] = Line.split("%");
 
                         if (ID == Integer.parseInt(arr[0])) {
                             request[0] = new DonationRequest(ID, arr[1]);
@@ -189,7 +189,7 @@ public class DataFiles {
 
         try {
             List<DonationRequest> donations = Files.readAllLines(donationsPath).stream().map(userString -> {
-                String arr[] = userString.split("-");
+                String arr[] = userString.split("%");
                 DonationRequest request = new DonationRequest(Integer.parseInt(arr[0]), arr[1]);
                 request.setRequestDate(Long.parseLong(arr[2]));
                 request.setAppointmentDate(Long.parseLong(arr[3]));
