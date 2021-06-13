@@ -27,11 +27,6 @@ import javafx.stage.Stage;
 
 public class DonorRegisterController {
 
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private JFXTextField nameText;
@@ -68,9 +63,6 @@ public class DonorRegisterController {
 
     @FXML
     private JFXCheckBox cancerTick;
-
-    @FXML
-    private JFXCheckBox anySufferTick;
 
     @FXML
     private JFXTextField LastDate;
@@ -168,7 +160,6 @@ public class DonorRegisterController {
         assert hepatitsTick != null : "fx:id=\"hepatitsTick\" was not injected: check your FXML file 'DonorReg.fxml'.";
         assert diabetesTick != null : "fx:id=\"diabetesTick\" was not injected: check your FXML file 'DonorReg.fxml'.";
         assert cancerTick != null : "fx:id=\"cancerTick\" was not injected: check your FXML file 'DonorReg.fxml'.";
-        assert anySufferTick != null : "fx:id=\"anySufferTick\" was not injected: check your FXML file 'DonorReg.fxml'.";
         assert LastDate != null : "fx:id=\"LastDate\" was not injected: check your FXML file 'DonorReg.fxml'.";
         assert RegisterButton != null : "fx:id=\"RegisterButton\" was not injected: check your FXML file 'DonorReg.fxml'.";
         genderText.setItems(FXCollections.observableArrayList("M", "F"));

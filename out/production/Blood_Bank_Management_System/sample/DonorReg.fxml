@@ -272,7 +272,7 @@
                   </GridPane>
                   <HBox>
                      <children>
-                        <VBox prefHeight="161.0" prefWidth="690.0">
+                        <VBox prefHeight="162.0" prefWidth="617.0">
                            <children>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="If you suffer from any other disease or take any medicine:">
                                  <font>
@@ -282,7 +282,7 @@
                                     <Insets left="25.0" />
                                  </VBox.margin>
                               </Text>
-                              <JFXTextArea focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="596.0" promptText="Type Here.." style="-fx-background-color: #414141; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
+                              <JFXTextArea focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="562.0" promptText="Type Here.." style="-fx-background-color: #414141; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
                                  <VBox.margin>
                                     <Insets left="30.0" top="10.0" />
                                  </VBox.margin>
@@ -309,7 +309,7 @@
                               </JFXDatePicker>
                            </children>
                            <padding>
-                              <Insets left="10.0" />
+                              <Insets left="20.0" />
                            </padding>
                         </VBox>
                      </children>

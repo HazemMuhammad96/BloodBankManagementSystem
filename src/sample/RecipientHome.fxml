@@ -9,6 +9,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -55,5 +57,51 @@
       </JFXButton>
       <JFXListView fx:id="bloodList" layoutX="172.0" layoutY="211.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="1000.0" stylesheets="@../ListView.css" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="175.0" />
       <JFXComboBox fx:id="BloodTypeSearch" focusColor="#405aa800" layoutX="435.0" layoutY="137.0" prefHeight="19.0" prefWidth="215.0" promptText="Blood Type" style="-fx-background-color: #393939;" stylesheets="@../ComboBox.css" unFocusColor="#4d4d4d00" />
+      <VBox fx:id="HospitalPopUP" alignment="TOP_CENTER" layoutX="502.0" layoutY="331.0" prefHeight="206.0" prefWidth="284.0" style="-fx-background-color: #1B1B1B; -fx-background-radius: 20;" visible="false">
+         <children>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <ImageView fx:id="Closebutton" fitHeight="18.0" fitWidth="19.0" onMouseClicked="#ClosebuttonClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/close.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="15.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital Location" textAlignment="CENTER">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="HospitalNameTxt" focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="239.0" promptText="Type Here.." style="-fx-background-color: #393939; -fx-background-radius: 10; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font name="Montserrat SemiBold" size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXButton fx:id="SentButton" onAction="#sentButtonClicked" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Sent" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat SemiBold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

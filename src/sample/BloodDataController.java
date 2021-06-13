@@ -27,10 +27,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-public class BloodDataController {
+public class BloodDataController  implements  sentHandler{
 
     @FXML
     private ResourceBundle resources;
@@ -53,7 +56,28 @@ public class BloodDataController {
     @FXML
     private JFXComboBox<String> BloodTypeSearch;
 
+    @FXML
+    private VBox HospitalPopUP;
+
+
+    @FXML
+    private JFXTextField HospitalNameTxt;
+
+    @FXML
+    private JFXButton SentButton;
+
     DataFiles Data = new DataFiles();
+
+    @FXML
+    void ClosebuttonClicked(MouseEvent event) {
+        HospitalPopUP.setVisible(false);
+    }
+
+    @FXML
+    void sentButtonClicked(ActionEvent event) {
+
+        HospitalPopUP.setVisible(false);
+    }
 
     @FXML
     void profileButtonClicked(ActionEvent event) {
@@ -138,9 +162,15 @@ public class BloodDataController {
         ObservableList<Blood> items = FXCollections.observableArrayList(blood);
         bloodList.getItems().clear();
         bloodList.setItems(items);
-        bloodList.setCellFactory(param -> new DonationsList());
+        bloodList.setCellFactory(param -> new DonationsList(this));
 
         System.out.println(blood);
 
+
+    }
+
+    @Override
+    public void sentRequest(Blood blood) {
+        HospitalPopUP.setVisible(true);
     }
 }

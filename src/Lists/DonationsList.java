@@ -13,11 +13,18 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import sample.ListCardController;
+import sample.sentHandler;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 public class DonationsList extends ListCell<Blood> {
+    public sentHandler Info;
+
+    public DonationsList(sentHandler info) {
+        Info = info;
+
+    }
 
     @Override
     protected void updateItem(Blood item, boolean empty) {
@@ -32,6 +39,7 @@ public class DonationsList extends ListCell<Blood> {
             try {
                 cardFrame = load.load();
                 ListCardController controller = load.getController();
+                controller.setInfo(Info);
                 controller.setItem(item);
             } catch (IOException e) {
                 e.printStackTrace();

@@ -99,7 +99,7 @@
             <Insets left="20.0" />
          </HBox.margin>
       </VBox>
-      <JFXButton fx:id="RequestButton" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Request" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="RequestButton" onAction="#RequestButtonClicked" prefHeight="37.0" prefWidth="154.0" ripplerFill="#ff6565" style="-fx-background-color: #E44E4E; -fx-background-radius: 40;" text="Request" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="16.0" />
          </font>
