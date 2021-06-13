@@ -1,15 +1,13 @@
 package sample;
 
-import Users.Donor;
+import Data.DataFiles;
 import Users.LoginRegisterUtils;
 import Users.Recipient;
-import Users.User;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -24,48 +22,15 @@ import javafx.stage.Stage;
 public class RecipientProfileController {
 
     @FXML
-    private ResourceBundle resources;
+    private JFXTextField nameText, emailText, passwordText, ageText, hospitalText, doctorText;
 
     @FXML
-    private URL location;
+    private Text genderText, bloodText;
 
     @FXML
-    private JFXTextField nameText;
+    private JFXButton saveButton, deleteButton, logoutButton, backButton;
 
-    @FXML
-    private JFXTextField emailText;
-
-    @FXML
-    private JFXTextField passwordText;
-
-    @FXML
-    private JFXTextField ageText;
-
-    @FXML
-    private Text genderText;
-
-    @FXML
-    private Text bloodText;
-
-    @FXML
-    private JFXTextField hospitalText;
-
-    @FXML
-    private JFXTextField doctorText;
-
-    @FXML
-    private JFXButton saveButton;
-
-    @FXML
-    private JFXButton deleteButton;
-
-    @FXML
-    private JFXButton logoutButton;
-
-    @FXML
-    private JFXButton backButton;
-
-    Recipient user  ;
+    Recipient user;
 
     @FXML
     void initialize() {
@@ -115,13 +80,17 @@ public class RecipientProfileController {
             e.printStackTrace();
         }
     }
+
     DataFiles files = new DataFiles();
+
     @FXML
     void saveButtonClicked(ActionEvent event) {
         user.setName(nameText.getText());
         user.setMail(emailText.getText());
         user.setPassword(passwordText.getText());
         user.setAge(Integer.parseInt(ageText.getText()));
+        user.setHospital(hospitalText.getText());
+        user.setDoctorOfCase(doctorText.getText());
         files.updateUser(user);
     }
 

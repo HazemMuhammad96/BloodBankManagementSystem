@@ -1,20 +1,20 @@
 package sample;
 
+import Data.DataFiles;
 import Users.Donor;
 import Users.LoginRegisterUtils;
-import Users.Recipient;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -29,40 +29,16 @@ public class DonorRegisterController {
 
 
     @FXML
-    private JFXTextField nameText;
+    private JFXTextField nameText, emailText, ageText;
 
     @FXML
-    private JFXTextField emailText;
+    private JFXPasswordField passwordText;
 
     @FXML
-    private JFXTextField passwordText;
+    private JFXComboBox<String> genderText, bloodTypeText;
 
     @FXML
-    private JFXTextField ageText;
-
-    @FXML
-    private JFXComboBox<String> genderText;
-
-    @FXML
-    private JFXComboBox<String> bloodTypeText;
-
-    @FXML
-    private JFXCheckBox bloodPressureTick;
-
-    @FXML
-    private JFXCheckBox thyroidDiseaseTick;
-
-    @FXML
-    private JFXCheckBox heardDisordersTick;
-
-    @FXML
-    private JFXCheckBox hepatitsTick;
-
-    @FXML
-    private JFXCheckBox diabetesTick;
-
-    @FXML
-    private JFXCheckBox cancerTick;
+    private JFXCheckBox bloodPressureTick, thyroidDiseaseTick, heardDisordersTick, hepatitsTick, diabetesTick, cancerTick;
 
     @FXML
     private JFXTextField LastDate;
@@ -70,6 +46,8 @@ public class DonorRegisterController {
     @FXML
     private JFXButton RegisterButton;
 
+    @FXML
+    private JFXTextArea othersText;
 
     @FXML
     private JFXDatePicker LastDatePicker;
@@ -80,7 +58,7 @@ public class DonorRegisterController {
         if (name.isSelected()) {
             DiseaseList.add(name.getText());
         } else {
-            System.err.println("sad");
+            System.err.println("ERROR");
         }
 
     }
@@ -136,6 +114,7 @@ public class DonorRegisterController {
 
         if (Utils.validateUserRegistration(email, password)) {
             Donor don = new Donor(1, name, email, password, age, gender, blood, date);
+            DiseaseList.add(othersText.getText());
             don.setDonorDisease(DiseaseList);
             Files.insertUser(don);
             LoginRegisterUtils utils = new LoginRegisterUtils();
@@ -144,7 +123,7 @@ public class DonorRegisterController {
             ChangeScene(event, "DonorHome.fxml");
 
         } else {
-            System.err.println("Somk");
+            System.err.println("Wrong Email or password");
         }
 
     }

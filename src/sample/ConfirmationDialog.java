@@ -66,10 +66,7 @@ public class ConfirmationDialog {
 
         dialogPane.setHeader(grid);
         dialogPane.setGraphic(null);
-//        ImageView icon = new ImageView("images/AlertLogo.png");
-//        icon.setFitHeight(48);
-//        icon.setFitWidth(48);
-//        alert.getDialogPane().setGraphic(icon);
+
         Optional<ButtonType> result = alert.showAndWait();
 
         return result.get();

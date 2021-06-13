@@ -5,6 +5,7 @@ import Users.LoginRegisterUtils;
 import Users.Recipient;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToolbar;
 
@@ -18,7 +19,6 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import uiUtils.SceneChangingUtils;
 
 import java.io.IOException;
 
@@ -28,13 +28,8 @@ public class LoginController {
     private JFXTextField emailTextBox;
 
     @FXML
-    private JFXTextField passwordTextBox;
+    private JFXPasswordField passwordTextBox;
 
-    @FXML
-    private JFXButton loginButton;
-
-    @FXML
-    private Hyperlink registerButton;
 
     @FXML
     void loginButtonPressed(ActionEvent event) {

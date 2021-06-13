@@ -1,15 +1,15 @@
 package sample;
 
+import Data.DataFiles;
 import Users.LoginRegisterUtils;
 import Users.Recipient;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -23,34 +23,12 @@ import javafx.stage.Stage;
 public class RecipientRegisterController {
 
     @FXML
-    private ResourceBundle resources;
+    private JFXTextField nameText, emailText, ageText, doctorCaseText, hospitalName;
+    @FXML
+    private JFXPasswordField passwordText;
 
     @FXML
-    private URL location;
-
-    @FXML
-    private JFXTextField nameText;
-
-    @FXML
-    private JFXTextField emailText;
-
-    @FXML
-    private JFXTextField passwordText;
-
-    @FXML
-    private JFXTextField ageText;
-
-    @FXML
-    private JFXComboBox<String> genderText;
-
-    @FXML
-    private JFXComboBox<String> bloodTypeText;
-
-    @FXML
-    private JFXTextField doctorCaseText;
-
-    @FXML
-    private JFXTextField hospitalName;
+    private JFXComboBox<String> genderText, bloodTypeText;
 
     @FXML
     private JFXButton RegisterButton;
@@ -78,7 +56,7 @@ public class RecipientRegisterController {
 
             ChangeScene(event, "RecipientHome.fxml");
         } else {
-            System.err.println("Somk");
+            System.err.println("Wrong Email or Password");
         }
 
     }

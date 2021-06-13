@@ -13,14 +13,14 @@
 
 <HBox fx:id="CardFrame" alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="914.0" style="-fx-background-color: #343434; -fx-background-radius: 10;" styleClass="hbox" stylesheets="@../ListView.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ListCardController">
    <children>
-      <AnchorPane prefHeight="67.0" prefWidth="60.0">
+      <AnchorPane prefHeight="67.0" prefWidth="74.0">
          <children>
-            <ImageView fitHeight="53.0" fitWidth="45.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="59.0" fitWidth="54.0" layoutX="16.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/BloodDrop.png" />
                </image>
             </ImageView>
-            <Text fx:id="BloodType" fill="WHITE" layoutX="15.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+">
+            <Text fx:id="BloodType" fill="WHITE" layoutX="1.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+" textAlignment="CENTER" wrappingWidth="67.51200103759754">
                <font>
                   <Font name="Montserrat SemiBold" size="16.0" />
                </font>
@@ -107,7 +107,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <HBox.margin>
-            <Insets left="300.0" />
+            <Insets left="280.0" />
          </HBox.margin>
       </JFXButton>
    </children>

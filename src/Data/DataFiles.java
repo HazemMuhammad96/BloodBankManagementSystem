@@ -1,4 +1,4 @@
-package sample;
+package Data;
 
 import Blood.Blood;
 import Factories.DonorFactory;
@@ -20,12 +20,15 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toList;
 
 
 public class DataFiles {
 
     Path usersPath = Paths.get("usersInfo.txt");
     Path donationsPath = Paths.get("donationRequestInfo.txt");
+    Path recipientPath = Paths.get("recipientInfo.txt");
+    Path indexPath = Paths.get("path.txt");
 
     public DataFiles() {
         createFile();
@@ -45,7 +48,19 @@ public class DataFiles {
                 Path donePath = Files.createFile(donationsPath);
                 System.out.println("File Created Successfully!");
             }
-
+            if (Files.exists(recipientPath)) {
+                System.out.println("File already exists");
+            } else {
+                Path donePath = Files.createFile(recipientPath);
+                System.out.println("File Created Successfully!");
+            }
+            if (Files.exists(indexPath)) {
+                System.out.println("File already exists");
+            } else {
+                Path donePath = Files.createFile(indexPath);
+                Files.write(donePath, "1".getBytes());
+                System.out.println("File Created Successfully!");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,8 +75,10 @@ public class DataFiles {
     public void insertUser(User user) {
 
         try {
-            int id = Files.lines(usersPath).collect(Collectors.toList()).size() + 1;
+//            int id = Files.lines(usersPath).collect(Collectors.toList()).size() + 1;
+            int id = Integer.parseInt(Files.lines(indexPath).collect(Collectors.toList()).get(0));
             user.setID(id);
+            Files.write(indexPath, (id + 1 + "").getBytes());
             Files.write(usersPath, (user.toString() + "\n").getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
@@ -153,7 +170,6 @@ public class DataFiles {
     }
 
     // Donations
-
     public void insertDonation(DonationRequest request) {
         try {
             Files.write(donationsPath, (request.toString() + "\n").getBytes(), StandardOpenOption.APPEND);
@@ -184,7 +200,7 @@ public class DataFiles {
         return request[0];
     }
 
-    public List<Blood> getBloodData(){
+    public List<Blood> getBloodData() {
         List<Blood> bloodList = new ArrayList<Blood>();
 
         try {
@@ -210,14 +226,23 @@ public class DataFiles {
                         e.printStackTrace();
                     }
                 });
-//            System.out.println(collect);
             });
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-//        System.out.println(collected);
 
         return bloodList;
+    }
+
+    //Blood Data
+    public void insertRecipientRequest(int id, Blood blood, long requestDate) {
+        try {
+            Files.write(recipientPath,
+                    (id + "%" + blood.getType() + "%" + blood.getQuantity() + "%" + requestDate + "\n").getBytes(),
+                    StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

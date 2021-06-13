@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -51,7 +52,7 @@
                               <Font name="Montserrat SemiBold" size="30.0" />
                            </font>
                            <cursor>
-                              <Cursor fx:constant="HAND" />
+                              <Cursor fx:constant="TEXT" />
                            </cursor>
                            <padding>
                               <Insets left="10.0" />
@@ -65,20 +66,20 @@
                               <Insets top="40.0" />
                            </VBox.margin>
                         </Text>
-                        <JFXTextField fx:id="passwordTextBox" focusColor="#40404000" layoutX="60.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="472.0" style="-fx-background-color: #414141; -fx-background-radius: 20; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                        <JFXPasswordField fx:id="passwordTextBox" focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="472.0" style="-fx-background-color: #414141; -fx-background-radius: 20; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
                            <font>
                               <Font name="Montserrat SemiBold" size="30.0" />
                            </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </JFXTextField>
+                        </JFXPasswordField>
                      </children>
                      <VBox.margin>
                         <Insets top="5.0" />

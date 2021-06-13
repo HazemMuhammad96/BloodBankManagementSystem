@@ -28,13 +28,10 @@ public class RegisterController {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource(path));
             Parent rootRegister = fxmlLoader.load();
-            //Parent rootRegister= FXMLLoader.load(getClass().getResource(path));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             stage.setTitle("Registration");
             stage.setScene(new Scene(rootRegister));
-//            stage.initStyle(StageStyle.UNDECORATED);
-//            LoginBtn.getScene().getWindow().hide();
 
             stage.show();
         } catch (IOException e) {

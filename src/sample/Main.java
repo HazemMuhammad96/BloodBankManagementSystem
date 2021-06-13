@@ -19,7 +19,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Blood Bank");
+        primaryStage.setTitle("Blood Bank Management System");
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root, 1300, 860));
         primaryStage.show();

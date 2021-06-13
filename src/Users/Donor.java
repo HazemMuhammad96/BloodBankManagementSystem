@@ -1,8 +1,5 @@
 package Users;
 
-import Blood.Disease;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Donor extends User {
@@ -23,14 +20,16 @@ public class Donor extends User {
 
     @Override
     public String toString() {
-        String s = "D%" + super.toString() + "%" + dateOfLastDonation + "%";
-        for (int i = 0; i < donorDisease.size(); i++) {
-            s += donorDisease.get(i);
-            if (i != donorDisease.size() - 1) s += "^";
+        String s = "D%" + super.toString() + "%" + dateOfLastDonation;
+        if (donorDisease != null) {
+            s += "%";
+            for (int i = 0; i < donorDisease.size(); i++) {
+                s += donorDisease.get(i);
+                if (i != donorDisease.size() - 1) s += "^";
+            }
         }
         return s;
     }
-
 
 
     public List<String> getDonorDisease() {

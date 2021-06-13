@@ -18,50 +18,13 @@ import javafx.scene.text.Text;
 
 public class ListCardController implements Initializable {
 
-
-
     public sentHandler Info;
 
     @FXML
-    private HBox CardHbox;
+    private Text BloodType, QuantityText, ReceivedDateText, ExpiryDateText;
 
-    @FXML
-    private AnchorPane AnchorImage;
 
-    @FXML
-    private Text BloodType;
-
-    @FXML
-    private VBox QuantityVbox;
-
-    @FXML
-    private Text Quantity;
-
-    @FXML
-    private Text QuantityText;
-
-    @FXML
-    private VBox ReceivedVbox;
-
-    @FXML
-    private Text ReceivedDate;
-
-    @FXML
-    private Text ReceivedDateText;
-
-    @FXML
-    private VBox ExpiryVbox;
-
-    @FXML
-    private Text ExpiryDate;
-
-    @FXML
-    private Text ExpiryDateText;
-
-    @FXML
-    private JFXButton RequestButton;
-
-    Blood blood ;
+    Blood blood;
 
     public void setInfo(sentHandler info) {
         Info = info;

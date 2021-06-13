@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RecipientRegisterController">
@@ -110,20 +111,20 @@
                                     <Font name="Montserrat SemiBold" size="18.0" />
                                  </font>
                               </Text>
-                              <JFXTextField fx:id="passwordText" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
+                              <JFXPasswordField fx:id="passwordText" focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
                                  <font>
                                     <Font name="Montserrat SemiBold" size="15.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="TEXT" />
                                  </cursor>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                              </JFXTextField>
+                              </JFXPasswordField>
                            </children>
                            <padding>
                               <Insets left="10.0" />

@@ -1,77 +1,45 @@
 package sample;
 
+import Data.DataFiles;
 import Users.Donor;
 import Users.LoginRegisterUtils;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
-import java.net.URL;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.ResourceBundle;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import Users.DonationRequest;
+import javafx.stage.Stage;
 
 public class DonorHome {
 
-    @FXML
-    private ResourceBundle resources;
 
     @FXML
-    private URL location;
-
-    @FXML
-    private JFXTextField nameText;
-
-    @FXML
-    private JFXTextField emailText;
-
-    @FXML
-    private JFXTextField passwordText;
-
-    @FXML
-    private JFXTextField ageText;
-
-    @FXML
-    private Text genderText;
-
-    @FXML
-    private Text bloodText;
+    private JFXTextField nameText, emailText, passwordText, ageText;
 
     @FXML
     private JFXTextField dateText;
 
     @FXML
-    private JFXButton saveButton;
+    private Text nameDonationText, requestDonationText, appointmentDonationText, bloodTypeDonationText, genderText, bloodText;
 
     @FXML
-    private JFXButton deleteButton;
+    private JFXButton logoutButton, sendRequestButton, saveButton, deleteButton;
 
-    @FXML
-    private Text nameDonationText;
-
-    @FXML
-    private Text requestDonationText;
-
-    @FXML
-    private Text appointmentDonationText;
-
-    @FXML
-    private Text bloodTypeDonationText;
-
-    @FXML
-    private JFXButton logoutButton;
-
-    @FXML
-    private JFXButton sendRequestButton;
     @FXML
     private AnchorPane donationCard;
 
@@ -100,6 +68,28 @@ public class DonorHome {
 
     }
 
+
+    @FXML
+    void logoutButtonClicked(ActionEvent event) {
+        LoginRegisterUtils.loggedInUser = null;
+        ChangeScene(event, "sample.fxml");
+    }
+
+    private void ChangeScene(ActionEvent event, String path) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(path));
+            Parent rootRegister = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stage.setTitle("Blood Bank Management System");
+            stage.setScene(new Scene(rootRegister));
+
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void initialize() {

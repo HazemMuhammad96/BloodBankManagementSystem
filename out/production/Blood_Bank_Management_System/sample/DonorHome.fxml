@@ -341,7 +341,7 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="logoutButton" layoutX="1149.0" layoutY="25.0" prefHeight="38.0" prefWidth="97.0" ripplerFill="#ffffff00" style="-fx-border-color: #E44E4E; -fx-border-radius: 40; -fx-border-width: 3;" text="Logout" textAlignment="CENTER" textFill="#e44e4e">
+      <JFXButton fx:id="logoutButton" layoutX="1149.0" layoutY="25.0" onAction="#logoutButtonClicked" prefHeight="38.0" prefWidth="97.0" ripplerFill="#ffffff00" style="-fx-border-color: #E44E4E; -fx-border-radius: 40; -fx-border-width: 3;" text="Logout" textAlignment="CENTER" textFill="#e44e4e">
          <font>
             <Font name="Montserrat SemiBold" size="13.0" />
          </font>

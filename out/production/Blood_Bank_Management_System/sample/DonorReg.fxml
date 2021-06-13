@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -66,7 +67,7 @@
                                     <Font name="Montserrat SemiBold" size="15.0" />
                                  </font>
                                  <cursor>
-                                    <Cursor fx:constant="HAND" />
+                                    <Cursor fx:constant="TEXT" />
                                  </cursor>
                                  <padding>
                                     <Insets left="10.0" />
@@ -92,7 +93,7 @@
                                     <Font name="Montserrat SemiBold" size="15.0" />
                                  </font>
                                  <cursor>
-                                    <Cursor fx:constant="HAND" />
+                                    <Cursor fx:constant="TEXT" />
                                  </cursor>
                                  <padding>
                                     <Insets left="10.0" />
@@ -113,20 +114,20 @@
                                     <Font name="Montserrat SemiBold" size="18.0" />
                                  </font>
                               </Text>
-                              <JFXTextField fx:id="passwordText" focusColor="#40404000" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#40404000">
-                                 <font>
-                                    <Font name="Montserrat SemiBold" size="15.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
+                              <JFXPasswordField fx:id="passwordText" focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #414141; -fx-background-radius: 25; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
-                              </JFXTextField>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="15.0" />
+                                 </font>
+                              </JFXPasswordField>
                            </children>
                            <padding>
                               <Insets left="10.0" />
@@ -144,7 +145,7 @@
                                     <Font name="Montserrat SemiBold" size="15.0" />
                                  </font>
                                  <cursor>
-                                    <Cursor fx:constant="HAND" />
+                                    <Cursor fx:constant="TEXT" />
                                  </cursor>
                                  <padding>
                                     <Insets left="10.0" />
@@ -282,7 +283,7 @@
                                     <Insets left="25.0" />
                                  </VBox.margin>
                               </Text>
-                              <JFXTextArea focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="562.0" promptText="Type Here.." style="-fx-background-color: #414141; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
+                              <JFXTextArea fx:id="othersText" focusColor="#405aa800" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="562.0" promptText="Type Here.." style="-fx-background-color: #414141; -fx-text-inner-color: #ffffff;" unFocusColor="#4d4d4d00">
                                  <VBox.margin>
                                     <Insets left="30.0" top="10.0" />
                                  </VBox.margin>
@@ -292,6 +293,9 @@
                                  <padding>
                                     <Insets left="10.0" top="10.0" />
                                  </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
                               </JFXTextArea>
                            </children>
                         </VBox>
